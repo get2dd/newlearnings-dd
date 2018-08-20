@@ -43,6 +43,6 @@ public class WeatherShareHandler {
          ResponseEntity<String> response = restTemplate.getForEntity(fooResourceUrl + symbol, String.class);
          LOG.info("ResponseBode: " + response.getBody());
          
-		return ServerResponse.ok().body(BodyInserters.fromObject("World"));
+		return ServerResponse.ok().body(BodyInserters.fromObject(response.getBody()));
 	}
 }
